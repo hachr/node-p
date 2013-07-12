@@ -1,0 +1,11 @@
+{
+    "name": "node-p",
+    "description": "pi stuff",
+    "version": "0.1.0",
+    "author": "",
+    "dependencies": {
+        "gpio":"*",
+        "pi-gpio":"*"
+    },
+    "devDependencies": {}
+}
