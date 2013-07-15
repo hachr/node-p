@@ -2,7 +2,8 @@ var gpio = require("gpio");
 
 var TRIGGER = 23;
 var ECHO = 24;
-
+var start = 0;
+var stop = 0;
 
 var trigger = gpio.export(TRIGGER, {
    // When you export a pin, the default direction is out. This allows you to set
@@ -19,6 +20,7 @@ var trigger = gpio.export(TRIGGER, {
            trigger.set();
            setTimeout(function(){
                trigger.set(0);
+               start = Date.now();
                console.log("triggered");
            },0.001);           
        },100);       
@@ -26,8 +28,6 @@ var trigger = gpio.export(TRIGGER, {
 });
 
 
-var start = 0;
-var stop = 0;
 
 var echo = gpio.export(ECHO, {
    // When you export a pin, the default direction is out. This allows you to set
@@ -42,7 +42,6 @@ var echo = gpio.export(ECHO, {
    // read or write to the header right away. Place your logic in this ready
    // function to guarantee everything will get fired properly
    ready: function() {
-       start = Date.now();
        console.log('ready for echo');
        echo.on('change',function(val){
            if(val){
