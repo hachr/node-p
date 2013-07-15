@@ -23,7 +23,7 @@ var trigger = gpio.export(TRIGGER, {
                start = Date.now();
                console.log("triggered");
            },0.001);           
-       },100);       
+       },10);       
    }
 });
 
@@ -46,8 +46,6 @@ var echo = gpio.export(ECHO, {
        echo.on('change',function(val){
            if(val){
                stop = Date.now();
-           }else{
-               start = Date.now();               
            }
            var duration = (stop - start);
            console.log("DURATION: " + duration);

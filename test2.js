@@ -23,8 +23,6 @@ gpio.open(ECHO, "input",function(err){
             
             if(value){
                 end = Date.now();
-            }else{
-                start = Date.now();
             }
             console.log("duration: " + (end-start));
         });
