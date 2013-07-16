@@ -4,8 +4,8 @@
     "version": "0.1.0",
     "author": "",
     "dependencies": {
-        "gpio":"*",
-        "pi-gpio":"*"
+      "onoff": "*",
+      "microtime": "*"
     },
     "devDependencies": {}
 }
